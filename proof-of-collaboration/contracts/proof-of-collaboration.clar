@@ -173,3 +173,6 @@
     )
 )
 
+(define-read-only (is-project-admin (address principal))
+    (default-to false (map-get? project-admins address))
+)
