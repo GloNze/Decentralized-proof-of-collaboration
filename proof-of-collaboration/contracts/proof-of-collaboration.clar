@@ -166,3 +166,10 @@
     (map-get? Contributors contributor)
 )
 
+(define-read-only (get-contributor-tier (contributor principal))
+    (match (map-get? Contributors contributor)
+        profile (ok (get tier profile))
+        err-not-found
+    )
+)
+
