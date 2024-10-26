@@ -51,3 +51,11 @@
         (ok true)
     )
 )
+
+;; Add project admin
+(define-public (add-project-admin (admin principal))
+    (begin
+        (asserts! (is-eq tx-sender contract-owner) err-owner-only)
+        (ok (map-set project-admins admin true))
+    )
+)
