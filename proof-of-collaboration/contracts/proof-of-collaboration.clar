@@ -40,3 +40,14 @@
 )
 
 (define-map project-admins principal bool)
+
+;; Data variable to keep track of contribution IDs
+(define-data-var contribution-counter uint u0)
+
+;; Initialize contract
+(define-public (initialize)
+    (begin
+        (map-set project-admins contract-owner true)
+        (ok true)
+    )
+)
