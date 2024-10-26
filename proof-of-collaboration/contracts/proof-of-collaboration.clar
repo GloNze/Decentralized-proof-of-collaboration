@@ -161,3 +161,8 @@
 (define-read-only (get-contribution (contribution-id uint))
     (map-get? Contributions contribution-id)
 )
+
+(define-read-only (get-contributor-profile (contributor principal))
+    (map-get? Contributors contributor)
+)
+
