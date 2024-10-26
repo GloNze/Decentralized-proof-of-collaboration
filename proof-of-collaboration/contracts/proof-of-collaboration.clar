@@ -156,3 +156,8 @@
         err-not-found
     )
 )
+
+;; Read-only functions
+(define-read-only (get-contribution (contribution-id uint))
+    (map-get? Contributions contribution-id)
+)
